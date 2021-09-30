@@ -1,7 +1,7 @@
 data class ListaDeudores(
     val prestamos: Prestamos,
     val idStudent: Student,
-    //val materiales: DetallesPrestamo
+  
 )
 {
     fun getDeudores(){}
@@ -19,8 +19,7 @@ data class ListaDeudores(
             deudores=prestamos.idStudent.fulname
             println("Lista de deudores:")
             println(deudores)
-            //println("")
-            //println(prestamos.idStudent.fulname.fulname+materiales.listarMateriales())
+            
         }
         return deudores
     }
