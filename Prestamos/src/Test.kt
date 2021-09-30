@@ -31,13 +31,11 @@ class Test {
         val detalles = DetallesPrestamo(prestamos,material,2)
 
 
-        //val deudores = ListaDeudores(prestamos,"","",)
-
-        //repositoryCRUD.insert(Student(1,"Kevin","Informatica","9"))
-        repositoryCRUD.insert(Student(1,"Kevin Kevin Uziel Hernandez Morales","Informatica","9"))
-        repositoryCRUD.insert(Student(2,"Yobany Chavez","Informatica","9"))
-        repositoryCRUD.insert(Student(3,"Zuriel Hernandez","Informatica","9"))
-        repositoryCRUD.insert(Student(4,"Gabriel Omar Sanchez","Informatica","9"))
+       
+        repositoryCRUD.insert(Student(1,"Ana Karen Antunez Miguel","Informatica","9"))
+        repositoryCRUD.insert(Student(2,"Hermas Procopio","Informatica","9"))
+        repositoryCRUD.insert(Student(3,"Luis Altamirano","Informatica","9"))
+        repositoryCRUD.insert(Student(4,"Lucila Curiel","Informatica","9"))
 
 
 
@@ -48,14 +46,14 @@ class Test {
 
 
 
-        repositoryCRUD.insert(Personal(5,"Omar Lopez","Encargado",'M'))
-        repositoryCRUD.insert(Personal(6,"Felipe Jimenez","Encargado",'M'))
+        repositoryCRUD.insert(Personal(5,"Gustavo Romero","Encargado",'M'))
+        repositoryCRUD.insert(Personal(6,"Kevin Hernandez","Encargado",'M'))
 
 
         repoMaterialesCRUD.insert(Materiales(1,"USB"))
         repoMaterialesCRUD.insert(Materiales(2,"Libro de Programacion Orientada a Objetos"))
 
-        //repoPrestamosCRUD.insert(Prestamos(1,idStudent = Student(1,"Kevin","Informatica","9"),idPersonal = Personal(1,"Omar","Encargado",'M'), LocalDate.parse("2020-05-05"), LocalDate.parse("2020-05-10"),area = Areas(1,"Almacen"),material = Materiales(1,"USB")))
+        
 
         repoPrestamosCRUD.insert(Prestamos(1,estudiantes,personal, LocalDate.parse("2021-05-05"),LocalDate.MAX,areas,material))
 
@@ -67,12 +65,9 @@ class Test {
 
         repoListaMateriales.insert(ListaMaterialesDeudores(prestamos,detalles,estudiantes,areas))
 
-        //println("pruebando"+repositoryCRUD.getAll())
-
         assertEquals(6, repositoryCRUD.dataList.size)
         assertEquals(3, repoAreasCRUD.dataList.size)
         assertEquals(2,repoMaterialesCRUD.dataList.size)
-        //ssertEquals(2,repoPrestamosCRUD.dataList.size)
         assertEquals(1,repoPrestamosCRUD.dataList.size)
         assertEquals(1, repoListaDeudores.dataList.size)
         assertEquals(1,repoListaMateriales.dataList.size)
@@ -93,15 +88,10 @@ class Test {
         val prestamo = prestamos.first { prestamo -> prestamo.idPrestamo.toString().contains("1") }
         val idSprestamo = prestamos.first { idSprestamo -> idSprestamo.idStudent.id.toString().contains("1") }
         val det = detallees.first { det -> det.idPrestamos.idPrestamo.toString().contains("1") }
-//        val deudores = listaD.first { listaDeudores -> listaDeudores.prestamos.fechaDevolucion.toString().contains("2021-06-20") }
-
         val listDeudas = listaD.first { listDeudas -> listDeudas.idStudent.id.toString().contains("1") }
-        //val listDeudas = listaD.first { listDeudas -> listDeudas.prestamos.fechaPrestamos.toString().contains("2021-05-05") }
         listDeudas.ListaDeudores()
 
         val listaMaterial = listaMateriales.first { listaMaterial -> listaMaterial.idStudent.id.toString().contains("1") }
-//        deudores.ListaDeudores()
-        //val deudores = listaD.first { deudores -> deudores.idStudent.id.toString().contains("2") }
 
         listaMaterial.listarMateriales()
 
