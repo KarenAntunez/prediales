@@ -30,7 +30,6 @@ class Test {
         val prestamos = Prestamos(1,estudiantes,personal, LocalDate.parse("2021-05-05"),LocalDate.MAX,areas,material)
         val detalles = DetallesPrestamo(prestamos,material,2)
 
-
        
         repositoryCRUD.insert(Student(1,"Ana Karen Antunez Miguel","Informatica","9"))
         repositoryCRUD.insert(Student(2,"Hermas Procopio","Informatica","9"))
@@ -38,12 +37,9 @@ class Test {
         repositoryCRUD.insert(Student(4,"Lucila Curiel","Informatica","9"))
 
 
-
-
         repoAreasCRUD.insert(Areas(1,"Almacen"))
         repoAreasCRUD.insert(Areas(2,"Biblioteca"))
         repoAreasCRUD.insert(Areas(3,"Centro de computo"))
-
 
 
         repositoryCRUD.insert(Personal(5,"Gustavo Romero","Encargado",'M'))
