@@ -3,7 +3,7 @@ data class Personal(
     override val fulname: String,
     val puesto: String,
     val genero: Char,
-    //val areas: Areas
+    
 ): Persona{
     override fun hasAccess(): Boolean {
         return true
